@@ -47,7 +47,7 @@ If your stack uses CRDs (Keycloak, cert-manager, trust-manager), grab the extens
 
 Init containers, sidecars, fix-permissions services, and hostname truncation are handled automatically.
 
-CRDs (Keycloak, cert-manager, trust-manager) are handled by [external extensions](https://docs.dekube.io/extensions/) via `--extensions-dir`.
+CRDs (Keycloak, cert-manager, trust-manager) are handled by [external extensions](https://docs.dekube.io/extend/extensions/) via `--extensions-dir`.
 
 ## Output files
 
@@ -70,7 +70,7 @@ python ../dekube-engine/build-distribution.py helmfile2compose \
 python helmfile2compose.py --from-dir /tmp/rendered --output-dir .
 ```
 
-See the [distributions docs](https://docs.dekube.io/distributions/) and [core architecture](https://docs.dekube.io/architecture/) for the full picture.
+See the [distributions docs](https://docs.dekube.io/understand/distributions/) and [core architecture](https://docs.dekube.io/understand/architecture/) for the full picture.
 
 ## Documentation
 
