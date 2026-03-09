@@ -1,6 +1,6 @@
 # helmfile2compose
 
-![vibe coded](https://img.shields.io/badge/vibe-coded-ff69b4)
+![ai assisted](https://img.shields.io/badge/ai--assisted-ff69b4)
 ![python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)
 ![heresy: 0/0](https://img.shields.io/badge/heresy-0%2F0-black)
 ![deity: Yog Sa'rath](https://img.shields.io/badge/deity-Yog%20Sa'rath-8b0000)
