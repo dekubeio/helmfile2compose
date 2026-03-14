@@ -12,6 +12,8 @@ This is where it started — a single Python script, born from the unholy reques
 
 Core of the problem: feed it Kubernetes manifests (from `helmfile template`, `helm template`, `kustomize build`, whatever produced them) and it will spit out a `compose.yml` + whatever configfile your proxy server will use. Not Kubernetes-in-Docker — no cluster, no kubelet, no shim. Plain `docker compose up`.
 
+**Just want it to work?** [kubernetes2simple](https://k2s.dekube.io/) converts your project in one command — no config, no extension picking. This repo is for maintainers who want full control.
+
 ## Quick start
 
 Download `helmfile2compose.py` from the [latest release](https://github.com/dekubeio/helmfile2compose/releases/latest).
