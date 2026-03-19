@@ -8,6 +8,7 @@
     "workload",
     "haproxy",
     "caddy",
+    "emptydir",
     "fix-permissions"
   ]
 }
