@@ -60,12 +60,16 @@ CRDs (Keycloak, cert-manager, trust-manager) are handled by [external extensions
 
 ## Development
 
-This repo contains built-in extensions under `extensions/`. The core engine lives in [dekube-engine](https://github.com/dekubeio/dekube-engine) (`src/dekube/`). The single-file `helmfile2compose.py` is a build artifact — dekube-engine + extensions concatenated by `build-distribution.py`.
+This repo doesn't vendor extension sources — `distribution.json` lists the bundled extensions by name, and CI fetches each one from its own repo via [dekube-manager](https://github.com/dekubeio/dekube-manager) at build time. The core engine lives in [dekube-engine](https://github.com/dekubeio/dekube-engine) (`src/dekube/`). The single-file `helmfile2compose.py` is a build artifact — dekube-engine + fetched extensions concatenated by `build-distribution.py`.
 
 ```bash
+# Fetch the bundled extensions listed in distribution.json
+python ../dekube-manager/dekube-manager.py --no-distribution -d .build \
+  $(python -c "import json; print(' '.join(json.load(open('distribution.json'))['extensions']))")
+
 # Build locally (reads core sources from sibling checkout)
 python ../dekube-engine/build-distribution.py helmfile2compose \
-  --extensions-dir extensions --core-dir ../dekube-engine
+  --extensions-dir .build/extensions --core-dir ../dekube-engine
 # → helmfile2compose.py
 
 # Test it
